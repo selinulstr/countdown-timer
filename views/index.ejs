@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown Timer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bellefair&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body><div class="four" id="rect"></div>
+    <div class="container">
+        <div class="circle">
+           
+          
+                    <p id="heading-one">Click to download the file</p>
+                    <p id="countdown" class="visibility">10</p>
+             
+              <svg version="1.1" id="circle" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+  viewBox="0 0 100 100" xml:space="preserve">
+    <circle fill="#293462" stroke="gray" stroke-width="3" stroke-mitterlimit="0" cx="50" cy="50" r="48" stroke-dasharray="360" stroke-linecap="round" transform="rotate(-90 ) translate(-100 0)" >
+        <animate begin="indefinite" id="animateOne" attributeName="stroke-dashoffset" values="360;0" dur="12s" repeatCount="1"></animate>
+        <animate 
+        id="animateTwo"
+        begin="indefinite"
+        attributeName="stroke"
+        values="#1CD6CE;"
+        dur="12s"
+        repeatCount="1"
+        fill="freeze"/>
+    </circle>
+</svg>
+        
+
+            <button id="downloadButton" class="button" onclick="doAll()">DOWNLOAD</button>
+       
+</div>
+        </div>
+      
+
+    
+    <script>
+
+        function startAnimate() {
+             
+    const animateButtonOne = document.getElementById("animateOne");
+    const animateButtonTwo = document.getElementById("animateTwo");
+    animateButtonOne.beginElement();
+    animateButtonTwo.beginElement();
+    
+        }
+  function startCountdown() {
+    let count = 10; 
+   
+    const countdownElement = document.getElementById("countdown");
+    countdownElement.style.visibility = "visible"; 
+   
+    const rect = document.getElementById("rect");
+    rect.classList.add("animate");
+    const button = document.getElementById("downloadButton");
+    const heading = document.getElementById("heading-one");
+    heading.innerHTML = "Downloading..."; 
+    button.disabled = true; 
+    button.classList.add("disabled"); 
+   
+
+    const interval = setInterval(() => {
+        if (count <= 0) {
+            clearInterval(interval); 
+            heading.innerHTML = "Download completed"; 
+            countdownElement.style.visibility = "hidden";
+            return;
+        }
+
+        count--; 
+        countdownElement.textContent = count;
+       
+     
+    }, 1000); 
+}
+    function doAll() {  
+        startCountdown();
+        startAnimate();
+      
+    }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,175 @@
+body {
+    background-color: #293462;
+    font-family: "Bellefair", serif;
+    font-weight: 400;
+    font-style: normal;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.circle {
+    width: 600px;
+    height: 600px;
+    border: 10px solid #D61C4E;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   position: relative;
+}
+
+.four {
+  margin: 0;
+  padding: 0;
+  width: 420px;
+  height: 420px;
+  border: 3px solid #FEDB39;
+  rotate: 45deg;
+ 
+ position: absolute;
+ top: 27%;
+ left: 38.9%;
+ z-index: 1;
+
+}
+
+.animate {
+  animation: animName 10s linear;
+}
+
+@keyframes animName {
+  0%{
+     transform: rotate(0deg);
+    }
+ 100%{
+     transform: rotate(360deg);
+    }
+ }
+
+ 
+ 
+.button {
+    position: absolute;
+    bottom: -25px;
+    background-color: #1CD6CE;
+    color: #FEDB39;
+    border: none;
+    border-radius: 5px;
+    font-weight: 700;
+    padding: 15px 30px;
+    cursor: pointer;
+    z-index: 2;
+}
+
+
+
+.button:hover {
+    background-color: #3eb6ac;
+}
+
+span {
+    font-size: 3rem;
+    visibility: hidden;
+}
+
+.disabled {
+    opacity: 0.9;
+    pointer-events: none;
+    cursor: not-allowed;
+    background-color: gray;
+}
+
+
+
+svg{
+    width: 400px;
+    height: 400px;
+    margin: 20px;
+  }
+
+
+  p {
+    position: absolute;
+    font-size: 2rem;
+    color: #FEDB39;
+  }
+
+  #countdown {
+    top: 350px;
+  }
+
+  .visibility {
+    visibility: hidden;
+  }
+
+
+  @media (max-height: 680px) {
+
+
+  .circle {
+      width: 300px;
+      height: 300px;
+      border: 5px solid #D61C4E;
+  }
+  
+  .four {
+  
+    width: 210px;
+    height: 210px;
+    border: 1.5px solid #FEDB39;
+   
+   top: 31.7%;
+   left: 28.7%;
+   
+  }
+
+   
+   
+  .button {
+    
+      bottom: -10px;
+     
+   
+      font-weight: 400;
+      padding: 5px 10px;
+      font-size: 0.75rem;
+  
+  }
+  
+  span {
+      font-size: 1.5rem;
+     
+  }
+  
+  
+  
+  svg{
+      width: 200px;
+      height: 200px;
+      margin: 10px;
+    }
+  
+  
+    p {
+    
+      font-size: 1rem;
+     
+    }
+  
+    #countdown {
+      top: 180px;
+    }
+  
+   
+
+
+
+  }
